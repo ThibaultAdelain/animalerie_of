@@ -4,8 +4,7 @@
         {% for animal in animals %}
         <div class="content container">
             <div class="row">
-
-                <h2><a href="">{{ animal.id_animal }}</a></h2>
+                <h2><a href="{% url 'animal_detail' id_animal=animal.id_animal %}">{{ animal.id_animal }}</a></h2>
                 <div class="col-md-8">
                     Animal: {{ animal.id_animal }}
                 </div>
