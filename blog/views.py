@@ -21,10 +21,13 @@ def aller_mangeoire(animal, ancien_lieu, nouveau_lieu):
             nouveau_lieu.save()
             animal.save()
             print(f"{animal.id_animal} occupe maintenant : ", nouveau_lieu)
+            return 1
         else:
             print(f"désolé, {nouveau_lieu} n'est pas libre")
+            return 0
     else:
         print(f"désolé, {animal.id_animal} n'a pas faim")
+        return -1
 
 def aller_nid(animal, ancien_lieu, nouveau_lieu):
     if animal.etat == "fatigué":
@@ -36,10 +39,13 @@ def aller_nid(animal, ancien_lieu, nouveau_lieu):
             nouveau_lieu.save()
             animal.save()
             print(f"{animal.id_animal} occupe maintenant : ", nouveau_lieu)
+            return 1
         else:
             print(f"désolé, {nouveau_lieu} n'est pas libre")
+            return 0
     else:
         print(f"désolé, {animal.id_animal} n'est pas fatigué")
+        return -1
 
 def aller_litière(animal, ancien_lieu, nouveau_lieu):
     if animal.etat == "endormi":
@@ -50,10 +56,13 @@ def aller_litière(animal, ancien_lieu, nouveau_lieu):
             nouveau_lieu.save()
             animal.save()
             print(f"{animal.id_animal} occupe maintenant : ", nouveau_lieu)
+            return 1
         else:
             print(f"désolé, {nouveau_lieu} n'est pas libre")
+            return 0
     else:
         print(f"désolé, {animal.id_animal} n'est pas endormi")
+        return -1
 
 def aller_roue(animal, ancien_lieu, nouveau_lieu):
     if animal.etat == "repus":
@@ -71,7 +80,7 @@ def aller_roue(animal, ancien_lieu, nouveau_lieu):
             return 0
     else:
         print(f"désolé, {animal.id_animal} n'est pas en état de faire du sport")
-        return 0
+        return -1
 
 
 
